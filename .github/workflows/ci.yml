@@ -6,13 +6,18 @@ on:
       - main
   pull_request:
 
-permissions:
-  actions: read
-  contents: read
-
 jobs:
   main:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      id-token: write
+      repository-projects: write
+      packages: write
+      attestations: write
+      pages: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -54,7 +59,7 @@ jobs:
           cmd: build:frontend # will run `yarn build:frontend` command 
 
       - name: Upload static files as artifact
-        id: deployment
+        id: upload-artifact
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
           path: apps/dashboard-frontend/dist
@@ -63,3 +68,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_id: ${{ steps.deployment.outputs.artifact_id }}
