@@ -1,5 +1,5 @@
 {
-  "name": "@dashboard/dashboard",
+  "name": "@dashboard/dashboard-backend",
   "version": "0.0.1",
   "private": true,
   "nx": {
@@ -11,7 +11,7 @@
           "args": [
             "--node-env=production"
           ],
-          "cwd": "apps/dashboard"
+          "cwd": "apps/dashboard-backend"
         },
         "configurations": {
           "development": {
@@ -28,8 +28,8 @@
         "cache": true,
         "executor": "@nx/js:prune-lockfile",
         "outputs": [
-          "{workspaceRoot}/apps/dashboard/dist/package.json",
-          "{workspaceRoot}/apps/dashboard/dist/package-lock.json"
+          "{workspaceRoot}/apps/dashboard-backend/dist/package.json",
+          "{workspaceRoot}/apps/dashboard-backend/dist/package-lock.json"
         ],
         "options": {
           "buildTarget": "build"
@@ -41,7 +41,7 @@
         ],
         "cache": true,
         "outputs": [
-          "{workspaceRoot}/apps/dashboard/dist/workspace_modules"
+          "{workspaceRoot}/apps/dashboard-backend/dist/workspace_modules"
         ],
         "executor": "@nx/js:copy-workspace-modules",
         "options": {
@@ -63,15 +63,15 @@
           "build"
         ],
         "options": {
-          "buildTarget": "@dashboard/dashboard:build",
+          "buildTarget": "@dashboard/dashboard-backend:build",
           "runBuildTargetDependencies": false
         },
         "configurations": {
           "development": {
-            "buildTarget": "@dashboard/dashboard:build:development"
+            "buildTarget": "@dashboard/dashboard-backend:build:development"
           },
           "production": {
-            "buildTarget": "@dashboard/dashboard:build:production"
+            "buildTarget": "@dashboard/dashboard-backend:build:production"
           }
         }
       },

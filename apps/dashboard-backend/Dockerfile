@@ -2,12 +2,12 @@
 # Build the docker image with `npx nx docker:build @dashboard/dashboard`.
 # Tip: Modify "docker:build" options in project.json to change docker build args.
 #
-# Run the container with `nx docker:run @dashboard/dashboard -p 3000:3000`.
+# Run the container with `nx docker:run @dashboard/dashboard -p 4100:4100`.
 #
 FROM docker.io/node:lts-alpine
 
 ENV HOST=0.0.0.0
-ENV PORT=3000
+ENV PORT=4100
 
 
 WORKDIR /app
