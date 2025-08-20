@@ -2,6 +2,9 @@
   "name": "@dashboard/source",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "= 22"
+  },
   "scripts": {
     "dev:frontend": "nx run dashboard-frontend:serve",
     "build:frontend": "nx run dashboard-frontend:build",
