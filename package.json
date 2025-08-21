@@ -8,7 +8,8 @@
   "scripts": {
     "dev:frontend": "nx run dashboard-frontend:serve",
     "build:frontend": "nx run dashboard-frontend:build",
-    "dev:backend": "nx serve dashboard-backend"
+    "dev:backend": "nx serve dashboard-backend",
+    "build:backend": "nx run dashboard-backend:build"
   },
   "private": true,
   "dependencies": {
