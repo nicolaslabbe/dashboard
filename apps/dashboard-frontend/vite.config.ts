@@ -8,6 +8,7 @@ export default defineConfig(() => ({
   server: {
     port: 4200,
     host: 'localhost',
+    allowedHosts: ['localhost', '127.0.0.1', 'nicodash.loca.lt'],
   },
   preview: {
     port: 4200,
@@ -26,6 +27,17 @@ export default defineConfig(() => ({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        sw: './public/sw.js'
+      },
+      output: {
+        entryFileNames: (chunkInfo) => {
+          return chunkInfo.name === 'sw' ? '[name].js' : 'assets/[name]-[hash].js';
+        }
+      }
+    }
   },
   test: {
     name: '@dashboard/dashboard-frontend',

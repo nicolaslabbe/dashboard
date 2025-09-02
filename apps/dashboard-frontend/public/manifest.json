@@ -1,11 +1,26 @@
 {
-    "name": "My PWA",
-    "display": "standalone",
-    "icons": [
-      {
-        "src": "icons/512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ]
-  }
+  "name": "Dashboard App",
+  "short_name": "Dashboard",
+  "description": "A powerful dashboard application",
+  "start_url": "/dashboard/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "scope": "/dashboard/",
+  "icons": [
+    {
+      "src": "512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "32x32"
+    }
+  ],
+  "categories": ["productivity", "business"],
+  "lang": "en"
+}
